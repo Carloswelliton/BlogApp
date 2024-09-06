@@ -1,0 +1,28 @@
+<div class="bg-light p-5 rounded-lg m-3">
+    <h1 class="display-4">Bem vindo ao meu blog</h1>
+    <p class="lead">Esta é a primeira aplicação web que faço usando o Node.js como ferramenta. <br>
+    Neste site estou usando as tecnologias de HTML e CSS e handlebars para compor a parte visual do website <br>
+    e como Back-end, uso a tecnologia Javascript no intepretador Node.JS.</p>
+    <hr class="my-4">
+    <p>Faça seu login e comece agora mesmo a experiencia nesse template</p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">login</a>
+</div>
+
+<h2>postagens Recentes</h2>
+
+{{#each postagens}}
+<div class="card mt-4">
+    <div class="card-body">
+        <h3>{{titulo}}</h3>
+        <p>{{descricao}}</p>
+        <a href="/postagem/{{slug}}"><button class="btn btn-success">Leia mais</button></a>
+        <hr>
+        <small>Categoria: <strong>{{categoria.nome}}</strong></small><br>
+        <small>Data de publicação: {{data}}</small>
+    </div>
+</div>
+<br>
+
+{{else}}
+    <h5>Nenhuma postagem</h5>
+{{/each}}
